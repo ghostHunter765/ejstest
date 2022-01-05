@@ -36,6 +36,12 @@ app.get("/fetchfile", (req, res) => {
 	//	res.setHeader("ContentType", "application/file");
 	res.sendFile(path.join(__dirname + "/test.qbx"));
 });
+app.post("/saveFile", (req, res) => {
+	// const data = fs.readFileSync("src/sample.txt");
+	//	res.setHeader("ContentType", "application/file");
+	console.log(req.body);
+	res.send();
+});
 
 app.post("/fileauth", (req, res) => {
 	const newtoken = JSON.stringify({ id: req.body.id });

@@ -51,8 +51,45 @@
       <link rel="stylesheet" href="css/awesomplete.css" />
       <script src="js/awesomplete.min.js" async></script>
    </head>
+  
    <body class="yin" id="mainbody">
-     
+    
+      <!-- Modal
+<div class="modal fade"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+       <button onclick='LoadFile()' class="btn-primary">getstarted </button>
+       <script>
+const LoadFile = (params) => {
+   // console.log(r)
+   fetch("http://localhost:5000/fetchfile").then(e=>e.blob()).then(e=>{
+      e.name ="text.qbx"
+      window.customFile=e
+      document.getElementById("importQbx").click()
+
+   //    console.log(e)
+   //  document.getElementById("import-file").files =new FileList([e])
+   //  console.log(document.getElementById("import-file").files)
+   //  document.getElementById("import-file").dispatchEvent("change")
+   //    console.log("object")
+   })
+}
+
+       </script>
+       </div> -->
+       <!-- <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+   </div>
+ </div> -->
       <div class="appendix"></div>
       <div id="entrance--window" class="bg-colorful-8">
          <div id="loader"></div>
@@ -3113,6 +3150,7 @@
             </div>
          </div>
       </div>
+      
       <!-- Placed at the end of the document so the pages load faster -->
       <script type="text/javascript"  src="js/modernizr.custom.js"></script>
       <script type="text/javascript"  src="js/classie.js"></script>
@@ -3122,8 +3160,8 @@
       <script>
          $( document ).ready(function()
          {
-          $(function()
-          {
+            $(function()
+            {
              $.material.init();
           });
          });
